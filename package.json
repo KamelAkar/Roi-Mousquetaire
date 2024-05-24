@@ -1,0 +1,20 @@
+{
+	"name": "naturalbot",
+	"version": "1.0.0",
+	"description": "Bot offciel de la séparation des terres",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start:dev": "nodemon ./src/index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@discordjs/builders": "^1.7.0",
+		"discord.js": "^14.15.2",
+		"dotenv": "^16.4.5",
+		"mysql2": "^3.9.7"
+	},
+	"type": "module"
+}
