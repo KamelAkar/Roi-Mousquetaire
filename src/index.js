@@ -9,9 +9,6 @@ import {
 } from "discord.js";
 import mysql from "mysql2/promise";
 
-import info from "./commands/info.js";
-import help from "./commands/help.js";
-import random from "./commands/random.js";
 import pool from "./commands/pool.js";
 import inscrire from "./commands/inscrire.js";
 import generateMatch from "./commands/generate_match.js";
@@ -56,9 +53,6 @@ client.on("ready", async () => {
 	const resultatMatchCommand = resultatMatch.createCommand(equipes);
 
 	const commandsList = [
-		info.data,
-		help.data,
-		random.data,
 		pool.data,
 		inscrire.data,
 		generateMatch.data,
@@ -102,13 +96,7 @@ client.on("interactionCreate", async (interaction) => {
 		return;
 	}
 
-	if (commandName === "info") {
-		await info.execute(interaction);
-	} else if (commandName === "help") {
-		await help.execute(interaction);
-	} else if (commandName === "random") {
-		await random.execute(interaction, db);
-	} else if (commandName === "pool") {
+	if (commandName === "pool") {
 		await pool.execute(interaction, db);
 	} else if (commandName === "inscrire") {
 		await inscrire.execute(interaction, db);
@@ -127,9 +115,6 @@ async function main() {
 	const resultatMatchCommand = resultatMatch.createCommand(equipes);
 
 	const commandsList = [
-		info.data,
-		help.data,
-		random.data,
 		pool.data,
 		inscrire.data,
 		generateMatch.data,
